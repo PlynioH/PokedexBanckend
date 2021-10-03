@@ -8,8 +8,8 @@ const validaPokemon = [
     check('nome','O nome do Pokemon é obrigatório').not().isEmpty(),
     check('tipo','O tipo do Pokemon é obrigatório').not().isEmpty(),
     check('_id','O _id do Pokemon é obrigatório').not().isEmpty(),
-    check('sexo','O sexo do Pokemon é obrigatório').isIn(['male','female']),
-    check('classificado','Como o Pokemon é classificado é obrigatório').not().isEmpty()
+    check('hp','A vida do Pokemon é obrigatória').not().isEmpty(),
+    check('foto','A foto do Pokemon é obrigatória').not().isEmpty()
 ]
 
 router.get('/', async(req, res) => {
