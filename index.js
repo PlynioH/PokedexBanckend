@@ -8,7 +8,7 @@ const app = express()
 
 app.use(express.json()) 
 
-const PORT = 300
+const PORT = 8000
 
 
 app.get("/",(req, res) => {
