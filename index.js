@@ -8,9 +8,6 @@ const app = express()
 
 app.use(express.json()) 
 
-const PORT = process.env.PIKACHU
-
-
 app.get("/",(req, res) => {
     res.json({
         mensagem: 'PokeAPI funcionando!',
@@ -28,6 +25,6 @@ app.use(function(req, res){
     })
 })
 
-app.listen(PORT || 8000, (req, res) => {
-    console.log(`PokeServidor rodando em ${PORT}`)
+app.listen(process.env.PIKACHU || 8000, (req, res) => {
+    console.log(`PokeServidor rodando em ${process.env.PIKACHU}`)
 })
