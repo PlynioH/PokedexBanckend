@@ -25,6 +25,6 @@ app.use(function(req, res){
     })
 })
 
-app.listen(process.env.PORT || 5000, (req, res) => {
-    console.log(`PokeServidor rodando em ${process.env.PORT}`)
+app.listen(process.env.PIKACHU || 5000, "0.0.0.0", (req, res) => {
+    console.log(`PokeServidor rodando em ${process.env.PIKACHU}`)
 })
