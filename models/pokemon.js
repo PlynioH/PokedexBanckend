@@ -15,12 +15,12 @@ const PokemonSchema = new mongoose.Schema({
         type: String
     },
 
-    sexo: {
-        type: String,
+    hp: {
+        type: Number,
         require: true
     },
 
-    classificado: {
+    foto: {
         type: String,
         require: true
     }
