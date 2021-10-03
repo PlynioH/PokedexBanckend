@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { check, validationResult } = require('express-validator')
 
-const Pokemon = require('./models/Pokemon')
+const Pokemon = require('../models/pokemon')
 
 const validaPokemon = [
     check('nome','O nome do Pokemon é obrigatório').not().isEmpty(),
