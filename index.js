@@ -8,7 +8,7 @@ const app = express()
 
 app.use(express.json()) 
 
-const PORT = 8000
+const PORT = process.env.PORT
 
 
 app.get("/",(req, res) => {
