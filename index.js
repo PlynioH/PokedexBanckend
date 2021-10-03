@@ -28,6 +28,6 @@ app.use(function(req, res){
     })
 })
 
-app.listen(PORT, (req, res) => {
+app.listen(PORT || 8000, (req, res) => {
     console.log(`PokeServidor rodando em ${PORT}`)
 })
