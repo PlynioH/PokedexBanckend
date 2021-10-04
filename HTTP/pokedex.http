@@ -1,0 +1,39 @@
+@baseURL = https://pokedexapirest.herokuapp.com
+
+GET {{baseURL}}/RotaPokemon
+
+GET {{baseURL}}/RotaPokemon/nome/pikachu
+
+GET {{baseURL}}/RotaPokemon/tipo/fire
+
+GET {{baseURL}}/RotaPokemon/476
+
+POST {{baseURL}}/RotaPokemon
+Content-Type: application/json
+
+{
+    "nome": "Matheus",
+	"tipo": "fire",
+	"_id": "2400",
+	"hp": 1,
+	"foto": "https://avatars.githubusercontent.com/u/66134948?v=4"
+}
+
+GET {{baseURL}}/RotaPokemon/2400
+
+PUT {{baseURL}}/RotaPokemon
+Content-Type: application/json
+
+{
+    "nome": "Matheus",
+	"tipo": "dark",
+	"_id": "2400",
+	"hp": 24,
+	"foto": "https://avatars.githubusercontent.com/u/66134948?v=4"
+}
+
+GET {{baseURL}}/RotaPokemon/2400
+
+DELETE {{baseURL}}/RotaPokemon/2400
+
+GET {{baseURL}}/RotaPokemon/2400

@@ -15,6 +15,9 @@ const validaPokemon = [
 router.get('/', async(req, res) => {
     try{
         const pokemons = await Pokemon.find()
+        if(!pokemon){
+            res.status(500).send({errors: [{message: 'Não foi possível encontrar Pokemons :('}]})
+        }
         res.json(pokemons)
     }catch (err){
         res.status(500).send({
@@ -26,6 +29,9 @@ router.get('/', async(req, res) => {
 router.get('/:id', async(req, res) => {
     try{
         const pokemon = await Pokemon.findById(req.params.id)
+        if(!pokemon){
+            res.status(500).send({errors: [{message: `Não foi possível obter o Pokemon com o _id informado ${req.params.id}`}]})
+        }
         res.json(pokemon)
     } catch (err){
         res.status(500).send({
@@ -37,6 +43,9 @@ router.get('/:id', async(req, res) => {
 router.get('/tipo/:tipo', async(req, res) => {
     try{
         const pokemon = await Pokemon.find({"tipo": req.params.tipo})
+        if(!pokemon){
+            res.status(500).send({errors: [{message: `Não foi possível obter os Pokemons com o tipo informado ${req.params.tipo}`}]})
+        }
         res.json(pokemon)
     } catch(err){
         res.status(500).send({
@@ -48,6 +57,9 @@ router.get('/tipo/:tipo', async(req, res) => {
 router.get('/nome/:nome', async(req, res) => {
     try{
         const pokemon = await Pokemon.find({"nome": req.params.nome})
+        if(!pokemon){
+            res.status(500).send({errors: [{message: `Não foi possível obter o Pokemon com o nome informado ${req.params.nome}`}]})
+        }
         res.json(pokemon)
     } catch(err){
         res.status(500).send({
