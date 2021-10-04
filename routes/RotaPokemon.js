@@ -15,9 +15,6 @@ const validaPokemon = [
 router.get('/', async(req, res) => {
     try{
         const pokemons = await Pokemon.find()
-        if(!pokemon){
-            res.status(500).send({errors: [{message: 'Não foi possível encontrar Pokemons :('}]})
-        }
         res.json(pokemons)
     }catch (err){
         res.status(500).send({
